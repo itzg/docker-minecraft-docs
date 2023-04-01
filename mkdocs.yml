@@ -1,0 +1,108 @@
+---
+site_name: Minecraft Server on Docker
+site_url: https://itzg.github.io/docker-minecraft-docs
+site_description: Documentation for Minecraft Server on Docker
+repo_url: https://github.com/itzg/docker-minecraft-docs
+edit_uri: blob/main/docs/
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+  locale: en
+
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - bash
+    - java
+    - docker
+    - shell
+    - json
+nav:
+  - "Home": "index.md"
+  - "Java Edition":
+    - "index.md"
+    - "Interacting With The Server": "java/rcon.md"
+    - "Data Directory": "java/data-directory.md"
+    - "Versions":
+      - "Minecraft Versions": "java/versions/minecraft.md"
+      - "Java Versions": "java/versions/java.md"
+    - "Healthcheck": "java/healthcheck.md"
+    - "Deployment Templates and Examples":
+      - "Helm Charts": "java/deployment/helmcharts.md"
+      - "Amazon Web Services (AWS)": "java/deployment/aws.md"
+      - "Docker Compose": "java/deployment/docker-compose.md"
+    - "Troubleshooting": "java/troubleshooting/index.md"
+    - "Server Types": "java/server-types/index.md"
+    - "Running server with a packwiz modpack": "java/packwiz/index.md"
+    - "Working with mods and plugins": "java/mods-plugins/index.md"
+    - "Server Configuration": "java/configuration/index.md"
+    - "Miscellaneous Options": "java/configuration/misc-options.md"
+    - "AutoPause":
+      - "java/autopause/index.md"
+      - "AutoStop": "java/autopause/autostop.md"
+    - "Running on RaspberryPi": "java/raspberrypi/index.md"
+    - "Mitigated Log4jShell Vulnerability": "java/log4j/index.md"
+    - "Environment Variables CheatSheet": "java/environment/index.md"
+  - "Bedrock": "bedrock/index.md"
+  - "Related Projects":
+    - "related-projects.md"
+    - "itzg/minecraft-bedrock-server": "https://github.com/itzg/docker-minecraft-bedrock-server"
+    - "mc-router": "https://github.com/itzg/mc-router"
+    - "itzg/bungeecord": "https://github.com/itzg/docker-bungeecord/"
+    - "itzg/mc-backup": "https://github.com/itzg/docker-mc-backup"
+    - "rcon-cli": "https://github.com/itzg/rcon-cli"
+    - "mc-monitor": "https://github.com/itzg/mc-monitor"
+    - "mc-image-helper": "https://github.com/itzg/mc-image-helper"
+    - "itzg/rcon": "https://github.com/itzg/docker-rcon-web-admin"
+  - "Contributing":
+    - "Development": "contributing/development.md"
+    - "Building": "contributing/building.md"
+
+extra_css:
+  - css/extra.css
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: 
+  - attr_list
+  - def_list
+  - tables
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - mdx_gh_links:
+      user: camalot
+      repo: mkdocs-test
+  - mkdocs-click
+copyright: Copyright &copy; itzg 2023.
+plugins:
+  - search
+  - autorefs
+  - literate-nav:
+      nav_file: README.md
+      implicit_index: true
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_section_style: list
+            members_order: source
+            show_root_heading: true
+            show_source: false
+            show_signature_annotations: true
