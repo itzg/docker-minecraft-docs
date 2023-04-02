@@ -1,0 +1,5 @@
+mkdocs-autorefs
+mkdocstrings
+mkdocs-literate-nav
+mdx-gh-links
+mkdocs-click
