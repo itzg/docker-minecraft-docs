@@ -1532,10 +1532,90 @@ Like the `WORLD` option above, you can specify the URL or path of a "mod pack" t
   </tbody>
 </table>
 
+
+### **FORGEAPI**
+
+!!! note
+
+This potentially could lead to unexpected behavior if the Mod receives an update with unexpected behavior.
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>MODS_FORGEAPI_KEY</code></td>
+      <td><strong>YOUR</strong> <a href="https://docs.curseforge.com/#getting-started">CurseForge API Key</a>.</td>
+      <td><code></code></td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><code>MODS_FORGEAPI_FILE</code></td>
+      <td>Required or use <code>MODS_FORGEAPI_PROJECTIDS</code>. Overrides <code>MODS_FORGEAPI_PROJECTIDS</code>.</td>
+      <td><code></code></td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><code>MODS_FORGEAPI_PROJECTIDS</code></td>
+      <td>Required if <code>MODS_FORGEAPI_FILE</code> is not defined.</td>
+      <td><code></code></td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><code>MODS_FORGEAPI_RELEASES</code></td>
+      <td><ul>
+        <li>release</li>
+        <li>beta</li>
+        <li>alpha</li>
+      </ul></td>
+      <td><code>release</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>MODS_FORGEAPI_DOWNLOAD_DEPENDENCIES</code></td>
+      <td>Attempts to download required mods</td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>MODS_FORGEAPI_IGNORE_GAMETYPE</code></td>
+      <td>Allows for filtering mods on family type: FORGE, FABRIC, and BUKKIT. (Does not filter for Vanilla or custom)</td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_FORGEAPI_MODS</code></td>
+      <td></td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_DATAPACKS_DEPTH</code></td>
+      <td>The depth in which to search for the files to remove.</td>
+      <td><code>1</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_DATAPACKS_INCLUDE</code></td>
+      <td>A blob to find datapacks to remove</td>
+      <td><code>*.jar</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
 <!-- ✅ ⬜️ -->
 <!-- <tr>
-            <td><code></code></td>
-            <td></td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr> -->
+      <td><code></code></td>
+      <td></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr> -->
