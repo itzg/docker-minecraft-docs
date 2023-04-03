@@ -2,7 +2,7 @@
 site_name: Minecraft Server on Docker
 site_url: https://itzg.github.io/docker-minecraft-docs
 site_description: Documentation for Minecraft Server on Docker
-repo_url: https://github.com/itzg/docker-minecraft-docs
+repo_url: https://github.com/itzg/docker-minecraft-server
 edit_uri: blob/main/docs/
 theme:
   name: material
