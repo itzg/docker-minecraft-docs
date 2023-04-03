@@ -25,6 +25,7 @@ theme:
     - docker
     - shell
     - json
+    - powershell
 nav:
   - "Java Edition":
     - "index.md"
