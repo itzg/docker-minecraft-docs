@@ -481,7 +481,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     </tbody>
 </table>
 
-### **WHITELIST**
+### **[WHITELIST](java/configuration/#whitelist-players)**
 
 <table style="width:100%">
     <thead>
@@ -520,7 +520,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     </tbody>
 </table>
 
-### **RCON**
+### **[RCON](java/configuration/#rcon)**
 
 <table style="width:100%">
     <thead>
@@ -589,7 +589,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     </tbody>
 </table>
 
-### **AUTOPAUSE**
+### **[AUTOPAUSE](java/autopause/)**
 
 !!! note
 
@@ -650,7 +650,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     </tbody>
 </table>
 
-### **AUTOSTOP**
+### **[AUTOSTOP](java/autopause/autostop/)**
 
 !!! note
 
@@ -700,7 +700,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 </table>
 
 
-### **CURSEFORGE**
+### **[CURSEFORGE](java/server-types/#auto-curseforge-management)**
 
 !!! note
 
@@ -801,7 +801,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
   </tbody>
 </table>
 
-### **FABRIC**
+### **[FABRIC](java/server-types/#running-a-fabric-server)**
 <table style="width:100%">
   <thead>
     <tr>
@@ -840,7 +840,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 </table>
 
 
-### **FORGE**
+### **[FORGE](java/mods-plugins/#forgeapi-usage-to-use-non-version-specific-projects)**
 
 <table style="width:100%">
   <thead>
@@ -880,7 +880,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 </table>
 
 
-### **QUILT**
+### **[QUILT](java/server-types/#running-a-quilt-server)**
 
 <table style="width:100%">
   <thead>
@@ -919,7 +919,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
   </tbody>
 </table>
 
-### **BUKKIT**
+### **[BUKKIT](java/server-types/#running-a-bukkitspigot-server)**
 
 <table style="width:100%">
   <thead>
@@ -946,7 +946,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
   </tbody>
 </table>
 
-### **SPIGOT**
+### **[SPIGOT](java/server-types/#running-a-bukkitspigot-server)**
 
 <table style="width:100%">
   <thead>
@@ -985,7 +985,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
   </tbody>
 </table>
 
-### **PAPER**
+### **[PAPER](java/server-types/#running-a-paper-server)**
 
 <table style="width:100%">
   <thead>
@@ -1019,7 +1019,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 </table>
 
 
-### **PUFFERFISH**
+### **[PUFFERFISH](java/server-types/#running-a-pufferfish-server)**
 
 <table style="width:100%">
   <thead>
@@ -1052,7 +1052,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
   </tbody>
 </table>
 
-### **PURPUR**
+### **[PURPUR](java/server-types/#running-a-purpur-server)**
 
 <table style="width:100%">
   <thead>
@@ -1091,7 +1091,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
   </tbody>
 </table>
 
-### **MOHIST**
+### **[MOHIST](java/server-types/#running-a-mohist-server)**
 
 <table style="width:100%">
   <thead>
@@ -1114,7 +1114,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 
 
 
-### **CANYON**
+### **[CANYON](java/server-types/#running-a-canyon-server)**
 
 !!! note
 
@@ -1140,7 +1140,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 </table>
 
 
-### **SPONGEVANILLA**
+### **[SPONGEVANILLA](java/server-types/#running-a-spongevanilla-server)**
 
 <table style="width:100%">
   <thead>
@@ -1161,7 +1161,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
   </tbody>
 </table>
 
-### **LIMBO**
+### **[LIMBO](java/server-types/#running-a-limbo-server)**
 
 <table style="width:100%">
   <thead>
@@ -1189,7 +1189,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 </table>
 
 
-### **CRUCIBLE**
+### **[CRUCIBLE](java/server-types/#running-a-crucible-server)**
 
 !!! note
 
@@ -1222,7 +1222,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 
 
 
-### **FEED THE BEAST**
+### **[FEED THE BEAST](java/server-types/#running-a-server-with-a-feed-the-beast-modpack)**
 
 !!! note
 
