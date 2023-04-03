@@ -26,7 +26,6 @@ theme:
     - shell
     - json
 nav:
-  - "Home": "index.md"
   - "Java Edition":
     - "index.md"
     - "Interacting With The Server": "java/rcon.md"
