@@ -337,25 +337,27 @@ To manage a CurseForge modpack automatically with upgrade support, pinned or lat
 
     If you use `docker run` you will need to escape the `$` with a `\`.   
     Example:
-    ``` shell
+    ```
     docker run ... -e "CF_API_KEY=\$11\$22\$33aaaaaaaaaaaaaaaaaaaaaaaaaa"
     ```
 
-    You can use a `.env` file, in the same directory as your `docker-compose.yaml`, and define your API Key there to remove the need to escape the `$` in your API Key. The `.env` file is [loaded automatically by docker compose](https://docs.docker.com/compose/environment-variables/set-environment-variables/#substitute-with-an-env-file). 
-    
-    *.env*
-    ``` 
-    CF_API_KEY=$11$22$33aaaaaaaaaaaaaaaaaaaaaaaaaa
+
+    To avoid exposing the API key, it is highly recommended to use a `.env` file, which is [loaded automatically by docker compose](https://docs.docker.com/compose/environment-variables/set-environment-variables/#substitute-with-an-env-file). `$`'s in the value still need to escaped with a second `$` and the variable needs to be referenced from the compose file, such as:
+
+    ``` yaml
+    environment:
+      CF_API_KEY: ${CF_API_KEY}
     ```
     
-    To use with `docker run` you need to specify the `.env` file
+    To use the equivalent with `docker run` you need to specify the `.env` explicitly:
+
     ```
     docker run --env-file=.env itzg/minecraft-server
     ```
 
 !!! note 
 
-    Be sure to use the appropriate [image tag for the Java version compatible with the modpack](#running-minecraft-server-on-different-java-version).
+    Be sure to use the appropriate [image tag for the Java version compatible with the modpack](java/versions/java/).
     
     Most modpacks require a good amount of memory, so it best to set `MEMORY` to at least "4G" since the default is only 1 GB.
 

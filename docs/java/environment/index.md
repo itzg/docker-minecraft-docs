@@ -1,6 +1,6 @@
-
 ### **OS OPTIONS**
-<table>
+
+<table style="width:100%">
     <thead>
         <tr>
             <th>NAME</th>
@@ -42,7 +42,7 @@
         </tr>
         <tr>
             <td><code>TZ</code></td>
-            <td>You can configure the timezone to match yours by setting the TZ environment variable.  
+            <td>You can configure the timezone to match yours by setting the TZ environment variable.
 
 alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 
@@ -110,7 +110,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 
 ### **SERVER**
 
-<table>
+<table style="width:100%">
     <thead>
         <tr>
             <th>NAME</th>
@@ -428,14 +428,14 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
             <td>⬜️</td>
         </tr>
         <tr>
-            <td><code>USE_FLARE_FLAGS</code></td>
-            <td>To enable the JVM flags required to fully support the <a href="https://blog.airplane.gg/flare">Flare profiling suite</a>.</td>
-            <td><code></code></td>
+            <td><code>USE_SIMD_FLAGS</code></td>
+            <td>Support for optimized SIMD operation</td>
+            <td><code>false</code></td>
             <td>⬜️</td>
         </tr>
         <tr>
-            <td><code>USE_SIMD_FLAGS</code></td>
-            <td>Support for optimized SIMD operation</td>
+            <td><code>DISABLE_HEALTHCHECK</code></td>
+            <td>This will disable the HealthCheck.</td>
             <td><code>false</code></td>
             <td>⬜️</td>
         </tr>
@@ -450,7 +450,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 
 ### **CUSTOM RESOURCE PACK**
 
-<table>
+<table style="width:100%">
     <thead>
         <tr>
             <th>NAME</th>
@@ -483,7 +483,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 
 ### **WHITELIST**
 
-<table>
+<table style="width:100%">
     <thead>
         <tr>
             <th>NAME</th>
@@ -522,7 +522,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 
 ### **RCON**
 
-<table>
+<table style="width:100%">
     <thead>
         <tr>
             <th>NAME</th>
@@ -595,7 +595,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 
     Autopause is not compatible with `EXEC_DIRECTLY=true` and the two cannot be set together.
 
-<table>
+<table style="width:100%">
     <thead>
         <tr>
             <th>NAME</th>
@@ -650,55 +650,53 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     </tbody>
 </table>
 
-
-
 ### **AUTOSTOP**
 
 !!! note
 
     AutoStop function is incompatible with the Autopause functionality, as they basically cancel out each other.
 
-<table>
-    <thead>
-        <tr>
-            <th>NAME</th>
-            <th>DESCRIPTION</th>
-            <th>DEFAULT</th>
-            <th>REQUIRED</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>ENABLE_AUTOSTOP</code></td>
-            <td>Enable the AutoStop functionality</td>
-            <td><code>FALSE</code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>AUTOSTOP_TIMEOUT_EST</code></td>
-            <td>describes the time between the last client disconnect and the stopping of the server</td>
-            <td><code>3600</code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>AUTOSTOP_TIMEOUT_INIT</code></td>
-            <td>describes the time between server start and the stopping of the server, when no client connects in-between</td>
-            <td><code>1800</code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>AUTOSTOP_PERIOD</code></td>
-            <td>describes period of the daemonized state machine, that handles the stopping of the serve</td>
-            <td><code>10</code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>DEBUG_AUTOSTOP</code></td>
-            <td>Adds additional logging for AutoStop</td>
-            <td><code>false</code></td>
-            <td>⬜️</td>
-        </tr>
-    </tbody>
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ENABLE_AUTOSTOP</code></td>
+      <td>Enable the AutoStop functionality</td>
+      <td><code>FALSE</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>AUTOSTOP_TIMEOUT_EST</code></td>
+      <td>describes the time between the last client disconnect and the stopping of the server</td>
+      <td><code>3600</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>AUTOSTOP_TIMEOUT_INIT</code></td>
+      <td>describes the time between server start and the stopping of the server, when no client connects in-between</td>
+      <td><code>1800</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>AUTOSTOP_PERIOD</code></td>
+      <td>describes period of the daemonized state machine, that handles the stopping of the serve</td>
+      <td><code>10</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>DEBUG_AUTOSTOP</code></td>
+      <td>Adds additional logging for AutoStop</td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
 </table>
 
 
@@ -708,93 +706,552 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 
      A CurseForge API key is required to use a CurseForge type server. Go to their [developer console](https://console.curseforge.com/), generate an API key, and set the environment variable CF_API_KEY
 
-<table>
-    <thead>
-        <tr>
-            <th>NAME</th>
-            <th>DESCRIPTION</th>
-            <th>DEFAULT</th>
-            <th>REQUIRED</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>CF_API_KEY</code></td>
-            <td><strong>YOUR</strong> CurseForge (Eternal) API Key.</td>
-            <td><code></code></td>
-            <td>✅</td>
-        </tr>
-        <tr>
-            <td><code>CF_PAGE_URL</code></td>
-            <td>Pass a page URL to the modpack or a specific file</td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_SLUG</code></td>
-            <td>Instead of a URL, the modpack slug can be provided.</td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_FILE_ID</code></td>
-            <td>The mod curseforge numerical ID.</td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_FILENAME_MATCHER</code></td>
-            <td>Specify a substring to match the desired filename</td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_EXCLUDE_INCLUDE_FILE</code></td>
-            <td>Global and per modpack exclusions can be declared in a JSON file and referenced with this variable. <br /><br />By default, the <a href="https://github.com/itzg/docker-minecraft-server/blob/master/files/cf-exclude-include.json">file bundled with the image</a> will be used, but can be disabled by setting this to an empty string. The schema of this file is <a href="https://github.com/itzg/mc-image-helper#excludeinclude-file-schema">documented here</a>.</td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_EXCLUDE_MODS</code></td>
-            <td>Mods can be excluded by passing a comma or space delimited list of project slugs or IDs</td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_FORCE_INCLUDE_MODS</code></td>
-            <td>Mods can be included by passing a comma or space delimited list of project slugs or IDs</td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_FORCE_SYNCHRONIZE</code></td>
-            <td>Forces the excludes/includes to be re-evaluated</td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_SET_LEVEL_FROM</code></td>
-            <td>Some modpacks come with world/save data via a worlds file and/or the overrides provided with the modpack. Either approach can be selected to set the LEVEL to the resulting saves directory by setting this to either:
-            <ul>
-                <li>WORLD_FILE</li>
-                <li>OVERRIDES</li>
-            </ul></td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_PARALLEL_DOWNLOADS</code></td>
-            <td>specify how many parallel mod downloads to perform</td>
-            <td><code>4</code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_OVERRIDES_SKIP_EXISTING</code></td>
-            <td>if set, files in the overrides that already exist in the data directory are skipped. world data is always skipped, if present.</td>
-            <td><code>false</code></td>
-            <td>⬜️</td>
-        </tr>
-    </tbody>
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>CF_API_KEY</code></td>
+      <td><strong>YOUR</strong> CurseForge (Eternal) API Key.</td>
+      <td><code></code></td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><code>CF_PAGE_URL</code></td>
+      <td>Pass a page URL to the modpack or a specific file</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_MODPACK_ZIP</code></td>
+      <td>If the authors of the modpack have disallowed project distribution, then the desired <strong>client</strong> modpack zip will need to be manually downloaded and made available to the container. The path to that file must be passed to this environment variable.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_SLUG</code></td>
+      <td>Instead of a URL, the modpack slug can be provided.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_FILE_ID</code></td>
+      <td>The mod curseforge numerical ID.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_FILENAME_MATCHER</code></td>
+      <td>Specify a substring to match the desired filename</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_EXCLUDE_INCLUDE_FILE</code></td>
+      <td>Global and per modpack exclusions can be declared in a JSON file and referenced with this variable. <br /><br />By default, the <a href="https://github.com/itzg/docker-minecraft-server/blob/master/files/cf-exclude-include.json">file bundled with the image</a> will be used, but can be disabled by setting this to an empty string. The schema of this file is <a href="https://github.com/itzg/mc-image-helper#excludeinclude-file-schema">documented here</a>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_EXCLUDE_MODS</code></td>
+      <td>Mods can be excluded by passing a comma or space delimited list of project slugs or IDs</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_FORCE_INCLUDE_MODS</code></td>
+      <td>Mods can be included by passing a comma or space delimited list of project slugs or IDs</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_FORCE_SYNCHRONIZE</code></td>
+      <td>Forces the excludes/includes to be re-evaluated</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_SET_LEVEL_FROM</code></td>
+      <td>Some modpacks come with world/save data via a worlds file and/or the overrides provided with the modpack. Either approach can be selected to set the LEVEL to the resulting saves directory by setting this to either:
+      <ul>
+        <li>WORLD_FILE</li>
+        <li>OVERRIDES</li>
+      </ul></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_PARALLEL_DOWNLOADS</code></td>
+      <td>specify how many parallel mod downloads to perform</td>
+      <td><code>4</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_OVERRIDES_SKIP_EXISTING</code></td>
+      <td>if set, files in the overrides that already exist in the data directory are skipped. world data is always skipped, if present.</td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **FABRIC**
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>FABRIC_LAUNCHER</code></td>
+      <td>Path to a custom launcher jar, relative to <code>/data</code></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FABRIC_LAUNCHER_URL</code></td>
+      <td>A URL to a custom launcher jar</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FABRIC_LAUNCHER_VERSION</code></td>
+      <td>A specific launcher version other than the latest</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FABRIC_LOADER_VERSION</code></td>
+      <td>A specific loader version other than the latest</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### **FORGE**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>FORGE_VERSION</code></td>
+      <td>The specific Forge Version</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FORGE_INSTALLER</code></td>
+      <td>Path to a pre-downloaded forge installer</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FORGE_INSTALLER_URL</code></td>
+      <td>A Forge installer from a custom location</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FORGE_FORCE_REINSTALL</code></td>
+      <td>If an error occurred while installing Forge, it might be possible to resolve by temporarily setting <code>FORGE_FORCE_REINSTALL</code> to <code>true</code>. Be sure to remove that variable after successfully starting the server.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### **QUILT**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>QUILT_LAUNCHER</code></td>
+      <td>Path to a custom launcher jar, relative to <code>/data</code></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>QUILT_LAUNCHER_URL</code></td>
+      <td>Url to a custom launcher jar.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>QUILT_LOADER_VERSION</code></td>
+      <td>The specific Quilt Loader Version</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>QUILT_INSTALLER_VERSION</code></td>
+      <td>The specific Quilt Launcher Version</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **BUKKIT**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>FORCE_REDOWNLOAD</code></td>
+      <td>If the downloaded server jar is corrupted, set this to <code>true</code> to force a re-download during the next container startup. After successfully re-downloading you should remove this, or set it to <code>false</code>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>BUKKIT_DOWNLOAD_URL</code></td>
+      <td>If you are hosting your own copy of Bukkit you can override the download URLs</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **SPIGOT**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>FORCE_REDOWNLOAD</code></td>
+      <td>If the downloaded server jar is corrupted, set this to <code>true</code> to force a re-download during the next container startup. After successfully re-downloading you should remove this, or set it to <code>false</code>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>SPIGOT_DOWNLOAD_URL</code></td>
+      <td>If you are hosting your own copy of Spigot you can override the download URLs</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>BUILD_FROM_SOURCE</code></td>
+      <td>You can build spigot from source by setting this to <code>true</code></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>SPIGET_RESOURCES</code></td>
+      <td>Set with a comma-separated list of SpigotMC resource IDs to automatically download <a href="https://www.spigotmc.org/resources/">SpigotMC resources/plugins</a> using <a href="https://spiget.org/">the spiget API</a>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **PAPER**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>PAPERBUILD</code></td>
+      <td>By default, the container will run the latest build of <a href="https://papermc.io/downloads">Paper server</a> but you can also choose to run a specific build with</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>PAPER_DOWNLOAD_URL</code></td>
+      <td>If you are hosting your own copy of Paper you can override the download URLs</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>SPIGET_RESOURCES</code></td>
+      <td>Set with a comma-separated list of SpigotMC resource IDs to automatically download <a href="https://www.spigotmc.org/resources/">SpigotMC resources/plugins</a> using <a href="https://spiget.org/">the spiget API</a>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### **PUFFERFISH**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>PUFFERFISH_BUILD</code></td>
+      <td>Set a specific Pufferfish build to use.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FORCE_REDOWNLOAD</code></td>
+      <td>If the downloaded server jar is corrupted, set this to <code>true</code> to force a re-download during the next container startup. After successfully re-downloading you should remove this, or set it to <code>false</code>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>USE_FLARE_FLAGS</code></td>
+      <td>To enable the JVM flags required to fully support the <a href="https://blog.airplane.gg/flare">Flare profiling suite</a>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **PURPUR**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>PURPUR_BUILD</code></td>
+      <td>Set a specific PURPUR build to use.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FORCE_REDOWNLOAD</code></td>
+      <td>If the downloaded server jar is corrupted, set this to <code>true</code> to force a re-download during the next container startup. After successfully re-downloading you should remove this, or set it to <code>false</code>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>USE_FLARE_FLAGS</code></td>
+      <td>To enable the JVM flags required to fully support the <a href="https://blog.airplane.gg/flare">Flare profiling suite</a>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>PURPUR_DOWNLOAD_URL</code></td>
+      <td>Set URL to download Purpur from custom URL.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **MOHIST**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>MOHIST_BUILD</code></td>
+      <td>Set a specific Mohist build to use.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+### **CANYON**
+
+!!! note
+
+    Only `VERSION=b1.7.3` is supported. Since that version pre-dates the health check mechanism used by this image, that will need to be disabled by setting `DISABLE_HEALTHCHECK=true`.
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>CANYON_BUILD</code></td>
+      <td>Set a specific CANYON build to use.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### **SPONGEVANILLA**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>SPONGEVERSION</code></td>
+      <td>Set a specific version of Sponge to use.</td>
+      <td><code>STABLE</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **LIMBO**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>LIMBO_BUILD</code></td>
+      <td>Set a specific build to use.</td>
+      <td><code>LATEST</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>LIMBO_SCHEMA_FILENAME</code></td>
+      <td>The Limbo Schema Filename</td>
+      <td><code>default.schem</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### **CRUCIBLE**
+
+!!! note
+
+    Crucible is only available for 1.7.10, so be sure to set `VERSION=1.7.10`.
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>CRUCIBLE_RELEASE</code></td>
+      <td>Set a specific release to use.</td>
+      <td><code>latest</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>LIMBO_SCHEMA_FILENAME</code></td>
+      <td>The Limbo Schema Filename</td>
+      <td><code>default.schem</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+### **FEED THE BEAST**
+
+!!! note
+
+    Requires one of the Ubuntu with Hotspot images listed in the [Java versions section](java/versions/java/).
+
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>FTB_MODPACK_ID</code></td>
+      <td>The numerical ID of the modpack to install</td>
+      <td><code></code></td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><code>FTB_MODPACK_VERSION_ID</code></td>
+      <td>The numerical ID of the version to install. If not specified, the latest version will be installed. </td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- ✅ ⬜️ -->
