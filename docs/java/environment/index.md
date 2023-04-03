@@ -448,6 +448,111 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     </tbody>
 </table>
 
+### PLUGINS / MODS / CONFIGS
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>COPY_PLUGINS_SRC</code></td>
+      <td>Copy the contents of <code>/data/plugins</code> from the defined source.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>COPY_PLUGINS_DEST</code></td>
+      <td>Copy the contents of <code>/data/plugins</code> from the defined source to this destination.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>COPY_MODS_SRC</code></td>
+      <td>Copy the contents of <code>/data/mods</code> from the defined source.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>COPY_MODS_DEST</code></td>
+      <td>Copy the contents of <code>/data/mods</code> from the defined source to this destination.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>COPY_CONFIG_SRC</code></td>
+      <td>Copy the contents of <code>/data/config</code> from the defined source.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>COPY_CONFIG_DEST</code></td>
+      <td>Copy the contents of <code>/data/config</code> from the defined source to this destination.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>SYNC_SKIP_NEWER_IN_DESTINATION</code></td>
+      <td>if you want files from <code>/plugins</code> to take precedence over newer files in <code>/data/plugins</code></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REPLACE_ENV_SUFFIXES</code></td>
+      <td>By default, the environment variable processing is performed on synchronized files that match the expected suffixes</td>
+      <td><code>yml,yaml,txt,cfg,conf,properties,hjson,json,tml,toml</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REPLACE_ENV_VARIABLES_EXCLUDES</code></td>
+      <td></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REPLACE_ENV_VARIABLES_EXCLUDE_PATHS</code></td>
+      <td></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REPLACE_ENV_DURING_SYNC </code></td>
+      <td>Disable the environment replacement during sync.</td>
+      <td><code>true</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_MODS</code></td>
+      <td></td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_MODS_INCLUDE</code></td>
+      <td>You can fine tune the removal process by specifying mods to include</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_MODS_EXCLUDE</code></td>
+      <td>You can fine tune the removal process by specifying mods to exclude</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_MODS_DEPTH</code></td>
+      <td>The depth of folders to delete for old mods.</td>
+      <td><code>16</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
 ### **CUSTOM RESOURCE PACK**
 
 <table style="width:100%">
