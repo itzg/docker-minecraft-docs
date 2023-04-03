@@ -1359,6 +1359,67 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
   </tbody>
 </table>
 
+### **MODRINTH**
+
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>MODRINTH_PROJECTS</code></td>
+      <td>A comma separated list of project slugs (short name) or IDs.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>MODRINTH_DOWNLOAD_OPTIONAL_DEPENDENCIES</code></td>
+      <td>required dependencies of the project will always be downloaded and optional dependencies can also be downloaded by setting this to <code>true</code></td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>MODRINTH_ALLOWED_VERSION_TYPE</code></td>
+      <td>the version type is used to determine the newest version to use from each project. The allowed values are <code>release</code>, <code>beta</code>, <code>alpha</code>.</td>
+      <td><code>release</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **MODPACK**
+
+Like the `WORLD` option above, you can specify the URL or path of a "mod pack" to download and install into mods for Forge/Fabric or plugins for Bukkit/Spigot. To use this option pass the environment variable `MODPACK`
+
+!!! note
+
+    The referenced URL must be a zip file with one or more jar files at the top level of the zip archive. Make sure the jars are compatible with the particular `TYPE` of server you are running.
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>MODPACK</code></td>
+      <td>A url to a zip file with one or more jar files at the top level of the zip archive.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
 <!-- ✅ ⬜️ -->
 <!-- <tr>
             <td><code></code></td>
