@@ -481,7 +481,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     </tbody>
 </table>
 
-### **[WHITELIST](java/configuration/#whitelist-players)**
+### **[WHITELIST](../configuration/#whitelist-players)**
 
 <table style="width:100%">
     <thead>
@@ -520,7 +520,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     </tbody>
 </table>
 
-### **[RCON](java/configuration/#rcon)**
+### **[RCON](../configuration/#rcon)**
 
 <table style="width:100%">
     <thead>
@@ -589,7 +589,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     </tbody>
 </table>
 
-### **[AUTOPAUSE](java/autopause/)**
+### **[AUTOPAUSE](../autopause/)**
 
 !!! note
 
@@ -650,7 +650,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     </tbody>
 </table>
 
-### **[AUTOSTOP](java/autopause/autostop/)**
+### **[AUTOSTOP](../autopause/autostop/)**
 
 !!! note
 
@@ -700,7 +700,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 </table>
 
 
-### **[CURSEFORGE](java/server-types/#auto-curseforge-management)**
+### **[CURSEFORGE](../server-types/#auto-curseforge-management)**
 
 !!! note
 
@@ -801,7 +801,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
   </tbody>
 </table>
 
-### **[FABRIC](java/server-types/#running-a-fabric-server)**
+### **[FABRIC](../server-types/#running-a-fabric-server)**
 <table style="width:100%">
   <thead>
     <tr>
@@ -840,7 +840,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 </table>
 
 
-### **[FORGE](java/mods-plugins/#forgeapi-usage-to-use-non-version-specific-projects)**
+### **[FORGE](../mods-plugins/#forgeapi-usage-to-use-non-version-specific-projects)**
 
 <table style="width:100%">
   <thead>
@@ -880,7 +880,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 </table>
 
 
-### **[QUILT](java/server-types/#running-a-quilt-server)**
+### **[QUILT](../server-types/#running-a-quilt-server)**
 
 <table style="width:100%">
   <thead>
@@ -919,7 +919,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
   </tbody>
 </table>
 
-### **[BUKKIT](java/server-types/#running-a-bukkitspigot-server)**
+### **[BUKKIT](../server-types/#running-a-bukkitspigot-server)**
 
 <table style="width:100%">
   <thead>
@@ -946,7 +946,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
   </tbody>
 </table>
 
-### **[SPIGOT](java/server-types/#running-a-bukkitspigot-server)**
+### **[SPIGOT](../server-types/#running-a-bukkitspigot-server)**
 
 <table style="width:100%">
   <thead>
@@ -985,7 +985,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
   </tbody>
 </table>
 
-### **[PAPER](java/server-types/#running-a-paper-server)**
+### **[PAPER](../server-types/#running-a-paper-server)**
 
 <table style="width:100%">
   <thead>
@@ -1019,7 +1019,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 </table>
 
 
-### **[PUFFERFISH](java/server-types/#running-a-pufferfish-server)**
+### **[PUFFERFISH](../server-types/#running-a-pufferfish-server)**
 
 <table style="width:100%">
   <thead>
@@ -1052,7 +1052,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
   </tbody>
 </table>
 
-### **[PURPUR](java/server-types/#running-a-purpur-server)**
+### **[PURPUR](../server-types/#running-a-purpur-server)**
 
 <table style="width:100%">
   <thead>
@@ -1091,7 +1091,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
   </tbody>
 </table>
 
-### **[MOHIST](java/server-types/#running-a-mohist-server)**
+### **[MOHIST](../server-types/#running-a-mohist-server)**
 
 <table style="width:100%">
   <thead>
@@ -1114,7 +1114,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 
 
 
-### **[CANYON](java/server-types/#running-a-canyon-server)**
+### **[CANYON](../server-types/#running-a-canyon-server)**
 
 !!! note
 
@@ -1140,7 +1140,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 </table>
 
 
-### **[SPONGEVANILLA](java/server-types/#running-a-spongevanilla-server)**
+### **[SPONGEVANILLA](../server-types/#running-a-spongevanilla-server)**
 
 <table style="width:100%">
   <thead>
@@ -1161,7 +1161,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
   </tbody>
 </table>
 
-### **[LIMBO](java/server-types/#running-a-limbo-server)**
+### **[LIMBO](../server-types/#running-a-limbo-server)**
 
 <table style="width:100%">
   <thead>
@@ -1189,7 +1189,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 </table>
 
 
-### **[CRUCIBLE](java/server-types/#running-a-crucible-server)**
+### **[CRUCIBLE](../server-types/#running-a-crucible-server)**
 
 !!! note
 
@@ -1222,7 +1222,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 
 
 
-### **[FEED THE BEAST](java/server-types/#running-a-server-with-a-feed-the-beast-modpack)**
+### **[FEED THE BEAST](../server-types/#running-a-server-with-a-feed-the-beast-modpack)**
 
 !!! note
 
