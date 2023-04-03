@@ -284,10 +284,14 @@ where the default is "world":
 
     docker run -d -e LEVEL=bonus ...
 
-> **NOTE:** if running multiple containers be sure to either specify a different `-v` host directory for each
+!!! note
+
+    if running multiple containers be sure to either specify a different `-v` host directory for each
 `LEVEL` in use or don't use `-v` and the container's filesystem will keep things encapsulated.
 
-> **INFO** Refer to the [data directory](#data-directory) section for a visual description of where the `$LEVEL` directory is situated.
+!!! info
+
+    Refer to the [data directory](java/data-directory) section for a visual description of where the `$LEVEL` directory is situated.
 
 ### Online mode
 
@@ -309,7 +313,9 @@ The server name (e.g. for bungeecord) can be set like:
 
 ### Server port
 
-> **WARNING:** only change this value if you know what you're doing. It is only needed when using host networking and it is rare that host networking should be used. Use `-p` port mappings instead.
+!!! warning
+
+    Only change this value if you know what you're doing. It is only needed when using host networking and it is rare that host networking should be used. Use `-p` port mappings instead.
 
 If you must, the server port can be set like:
 
