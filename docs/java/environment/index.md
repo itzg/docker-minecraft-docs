@@ -650,6 +650,12 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
             <td>✅</td>
         </tr>
         <tr>
+            <td><code>RCON_PASSWORD_FILE</code></td>
+            <td>A file that contains the RCON Password.</td>
+            <td><code>minecraft</code></td>
+            <td>✅</td>
+        </tr>
+        <tr>
             <td><code>RCON_PORT</code></td>
             <td>The port for RCON</td>
             <td><code>25575</code></td>
@@ -689,6 +695,12 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
             <td><code>RCON_CMDS_STARTUP</code></td>
             <td>RCON commands can be configured to execute when the server starts, a client connects, or a client disconnects</td>
             <td><code></code></td>
+            <td>⬜️</td>
+        </tr>
+        <tr>
+            <td><code>RCON_CMDS_PERIOD</code></td>
+            <td>The number of seconds between each RCON Startup commands</td>
+            <td><code>10</code></td>
             <td>⬜️</td>
         </tr>
     </tbody>
@@ -1596,13 +1608,13 @@ This potentially could lead to unexpected behavior if the Mod receives an update
       <td>⬜️</td>
     </tr>
     <tr>
-      <td><code>REMOVE_OLD_DATAPACKS_DEPTH</code></td>
+      <td><code>REMOVE_OLD_MODS_DEPTH</code></td>
       <td>The depth in which to search for the files to remove.</td>
       <td><code>1</code></td>
       <td>⬜️</td>
     </tr>
     <tr>
-      <td><code>REMOVE_OLD_DATAPACKS_INCLUDE</code></td>
+      <td><code>REMOVE_OLD_MODS_INCLUDE</code></td>
       <td>A blob to find datapacks to remove</td>
       <td><code>*.jar</code></td>
       <td>⬜️</td>
