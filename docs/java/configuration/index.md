@@ -291,7 +291,7 @@ where the default is "world":
 
 !!! info
 
-    Refer to the [data directory](java/data-directory) section for a visual description of where the `$LEVEL` directory is situated.
+    Refer to the [data directory](../java/data-directory) section for a visual description of where the `$LEVEL` directory is situated.
 
 ### Online mode
 

@@ -1,4 +1,4 @@
-To run this image on a RaspberryPi 3 B+, 4, or newer, use any of the image tags [list in the Java version section](#running-minecraft-server-on-different-java-version) that specify `armv7` for the architecture, which includes `itzg/minecraft-server:latest`.
+To run this image on a RaspberryPi 3 B+, 4, or newer, use any of the image tags [list in the Java version section](../java/versions/java) that specify `armv7` for the architecture, which includes `itzg/minecraft-server:latest`.
 
 !!! note
    
