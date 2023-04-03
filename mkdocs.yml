@@ -51,7 +51,12 @@ nav:
     - "Running on RaspberryPi": "java/raspberrypi/index.md"
     - "Mitigated Log4jShell Vulnerability": "java/log4j/index.md"
     - "Environment Variables CheatSheet": "java/environment/index.md"
-  - "Bedrock": "bedrock/index.md"
+  - "Bedrock":
+    - "bedrock/index.md"
+    - "Environment Variables": "bedrock/environment/index.md"
+    - "Deployment Templates and Examples":
+      - "Docker Compose": "bedrock/deployment/docker-compose.md"
+      - "Kubernetes": "bedrock/deployment/k8s.md"
   - "Related Projects":
     - "related-projects.md"
     - "itzg/minecraft-bedrock-server": "https://github.com/itzg/docker-minecraft-bedrock-server"
