@@ -22,7 +22,7 @@ The section symbol (§) and other unicode characters are automatically converted
 
 renders
 
-![](../../images/motd-example.png)
+![](../../assets/images/java/motd-example.png)
 
 To produce a multi-line MOTD, you will need to double escape the newline such as
 

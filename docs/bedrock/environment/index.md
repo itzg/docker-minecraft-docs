@@ -129,8 +129,44 @@
       <td>⬜️</td>
     </tr>
     <tr>
+      <td><code>ALLOW_LIST</code></td>
+      <td>If <code>true</code> and map in a <a href="https://minecraft.gamepedia.com/Whitelist.json">allowlist.json</a> that is custom-crafted to the container.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>ALLOW_LIST_USERS</code></td>
+      <td>A list of player names list users that should be allowed.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
       <td><code>WHITE_LIST</code></td>
-      <td></td>
+      <td>If <code>true</code> and map in a <a href="https://minecraft.gamepedia.com/Whitelist.json">whitelist.json</a> that is custom-crafted to the container.</td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>WHITE_LIST_USERS</code></td>
+      <td>A list of player names list users that should be whitelisted</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>OPS</code></td>
+      <td>A list of XUIDs to grant OPS permissions</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>MEMBERS</code></td>
+      <td>define the members on the server</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>VISITORS</code></td>
+      <td>define the visitors on the server</td>
       <td><code></code></td>
       <td>⬜️</td>
     </tr>

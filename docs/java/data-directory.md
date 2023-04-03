@@ -1,6 +1,6 @@
 Everything the container manages is located under the **container's** `/data` path, as shown here:
 
-![](../images/level-vs-world.drawio.png)
+![](../assets/images/java/level-vs-world.drawio.png)
 
 !!! note
 

@@ -53,9 +53,11 @@ nav:
   - "Bedrock":
     - "bedrock/index.md"
     - "Environment Variables": "bedrock/environment/index.md"
-    - "Deployment Templates and Examples":
+    - "Deployment":
       - "Docker Compose": "bedrock/deployment/docker-compose.md"
       - "Kubernetes": "bedrock/deployment/k8s.md"
+    - "Examples": "bedrock/examples/index.md"
+    - "Mods Addons": "bedrock/mods/index.md"
   - "Related Projects":
     - "related-projects.md"
     - "itzg/minecraft-bedrock-server": "https://github.com/itzg/docker-minecraft-bedrock-server"
