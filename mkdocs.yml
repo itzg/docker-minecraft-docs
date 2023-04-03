@@ -73,7 +73,7 @@ nav:
     - "Building": "contributing/building.md"
 
 extra_css:
-  - css/extra.css
+  - assets/css/extra.css
 markdown_extensions:
   - admonition
   - toc:
@@ -93,8 +93,8 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - mdx_gh_links:
-      user: camalot
-      repo: mkdocs-test
+      user: itzg
+      repo: docker-minecraft-server
   - mkdocs-click
 copyright: Copyright &copy; itzg 2023.
 plugins:
