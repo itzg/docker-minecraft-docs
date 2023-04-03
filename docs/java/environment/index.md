@@ -122,7 +122,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     <tbody>
         <tr>
             <td><code>TYPE</code></td>
-            <td>The server <a href="java/server-types/">type</a></td>
+            <td>The server <a href="../server-types/">type</a></td>
             <td><code>VANILLA</code></td>
             <td>⬜️</td>
         </tr>
@@ -1226,7 +1226,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 
 !!! note
 
-    Requires one of the Ubuntu with Hotspot images listed in the [Java versions section](java/versions/java/).
+    Requires one of the Ubuntu with Hotspot images listed in the [Java versions section](../versions/java/).
 
 
 <table style="width:100%">
