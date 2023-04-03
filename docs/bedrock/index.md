@@ -100,4 +100,4 @@ There are two ways to handle a whitelist. The first is to set the `WHITE_LIST` e
 - [Minecraft Bedrock Server Bridge](https://github.com/macchie/minecraft-bedrock-server-bridge) by @macchie
 
 ### Tutorials
-[@TheTinkerDad]([url](https://github.com/TheTinkerDad)) provides an excellent tutorial on how to host multiple instances on a single port (19132) so that it's discoverable: https://www.youtube.com/watch?v=ds0_ESzjbfs
+[@TheTinkerDad]([url](https://github.com/TheTinkerDad)) provides an excellent tutorial on how to host multiple instances on a single port (19132) so that it's discoverable: [https://www.youtube.com/watch?v=ds0_ESzjbfs](https://www.youtube.com/watch?v=ds0_ESzjbfs)
