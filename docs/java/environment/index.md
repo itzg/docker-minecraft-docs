@@ -1420,6 +1420,118 @@ Like the `WORLD` option above, you can specify the URL or path of a "mod pack" t
   </tbody>
 </table>
 
+### **WORLD DATA**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>WORLD</code></td>
+      <td>A URL that is accessible from inside the container to a directory, zip, or tar file containing an archived world.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>WORLD_INDEX</code></td>
+      <td>If the archive contains more than one level.dat, then set this to the index, which defaults to 1</td>
+      <td><code>1</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FORCE_WORLD_COPY</code></td>
+      <td>Will force a world file to be downloaded / copied, even if it already exists in the container.</td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **DATAPACKS**
+
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>DATAPACKS</code></td>
+      <td>A comma-separated list of zip file URL, zip file in container, or directory in container.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>DATAPACKS_FILE</code></td>
+      <td>a text file within the container where each line is a zip file URL, zip file in container, or directory in container.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_DATAPACKS</code></td>
+      <td>: if <code>true</code> the datapacks directory is removed of everything matching <code>REMOVE_OLD_DATAPACKS_INCLUDE</code>, but excluding <code>REMOVE_OLD_DATAPACKS_EXCLUDE</code> no deeper than <code>REMOVE_OLD_DATAPACKS_DEPTH</code></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_DATAPACKS_INCLUDE</code></td>
+      <td>A blob to match datapacks to remove.</td>
+      <td><code>*.zip</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_DATAPACKS_INCLUDE</code></td>
+      <td>A blob to exclude datapacks to remove.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_DATAPACKS_INCLUDE</code></td>
+      <td>The directory depth to search while matching.</td>
+      <td><code>16</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **VANILLATWEAKS**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>VANILLATWEAKS_FILE</code></td>
+      <td>comma separated list of JSON VanillaTweak pack files accessible within the container</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>VANILLATWEAKS_SHARECODE</code></td>
+      <td>A comma separated list of share codes</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
 <!-- ✅ ⬜️ -->
 <!-- <tr>
             <td><code></code></td>
