@@ -109,13 +109,19 @@ RCON is **enabled by default** to allow for graceful shut down the server and co
 
 The default password is "minecraft" but **change the password before deploying into production** by setting `RCON_PASSWORD`.
 
-**DO NOT MAP THE RCON PORT EXTERNALLY** unless you aware of all the consequences and have set a **secure password** with `RCON_PASSWORD`. 
+!!! danger
+    
+    **DO NOT MAP THE RCON PORT EXTERNALLY** unless you aware of all the consequences and have set a **secure password** with `RCON_PASSWORD`. 
 
 !!! info 
 
     Mapping ports (`-p` command line or `ports` in compose) outside the container and docker networking needs to be a purposeful choice. Most production Docker deployments do not need any of the Minecraft ports mapped externally from the server itself.
 
-By default, the server listens for RCON on port 25575 within the container. It can be changed with `RCON_PORT` but only do this if you have a very good reason. **DO NOT change `rcon.port` via `server.properties`** or integrations will break.
+By default, the server listens for RCON on port 25575 within the container. It can be changed with `RCON_PORT` but only do this if you have a very good reason. 
+
+!!! warning
+    
+    **DO NOT** change `rcon.port` via `server.properties`** or integrations will break.
 
 ### Query
 
