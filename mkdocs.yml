@@ -42,6 +42,7 @@ nav:
     - "Troubleshooting": "java/troubleshooting/index.md"
     - "Server Types":
       - "java/server-types/index.md"
+      - "CurseForge": "java/server-types/curseforge.md"
       - "Fabric": "java/server-types/fabric.md"
     - "Running server with a packwiz modpack": "java/packwiz/index.md"
     - "Working with mods and plugins": "java/mods-plugins/index.md"
