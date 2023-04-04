@@ -44,12 +44,12 @@ nav:
       - "java/server-types/index.md"
       - "CurseForge": "java/server-types/curseforge.md"
       - "Fabric": "java/server-types/fabric.md"
-    - "Running server with a packwiz modpack": "java/packwiz/index.md"
+      - "Packwiz": ""java/server-types/packwiz.md"
     - "Working with mods and plugins": "java/mods-plugins/index.md"
     - "Server Configuration": "java/configuration/index.md"
     - "Miscellaneous Options": "java/configuration/misc-options.md"
-    - "AutoPause":
-      - "java/autopause/index.md"
+    - "AutoPause / AutoStop":
+      - "AutoPause": "java/autopause/autopause.md"
       - "AutoStop": "java/autopause/autostop.md"
     - "Running on RaspberryPi": "java/raspberrypi/index.md"
     - "Mitigated Log4jShell Vulnerability": "java/log4j/index.md"
