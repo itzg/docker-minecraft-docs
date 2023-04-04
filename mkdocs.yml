@@ -40,7 +40,9 @@ nav:
       - "Amazon Web Services (AWS)": "java/deployment/aws.md"
       - "Docker Compose": "java/deployment/docker-compose.md"
     - "Troubleshooting": "java/troubleshooting/index.md"
-    - "Server Types": "java/server-types/index.md"
+    - "Server Types":
+      - "java/server-types/index.md"
+      - "Fabric": "java/server-types/fabric.md"
     - "Running server with a packwiz modpack": "java/packwiz/index.md"
     - "Working with mods and plugins": "java/mods-plugins/index.md"
     - "Server Configuration": "java/configuration/index.md"
