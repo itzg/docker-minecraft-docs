@@ -44,7 +44,7 @@ nav:
       - "java/server-types/index.md"
       - "CurseForge": "java/server-types/curseforge.md"
       - "Fabric": "java/server-types/fabric.md"
-      - "Packwiz": ""java/server-types/packwiz.md"
+      - "Packwiz": "java/server-types/packwiz.md"
     - "Working with mods and plugins": "java/mods-plugins/index.md"
     - "Server Configuration": "java/configuration/index.md"
     - "Miscellaneous Options": "java/configuration/misc-options.md"
