@@ -1,11 +1,34 @@
-[RCON](http://wiki.vg/RCON) is enabled by default, so you can `exec` into the container to
-access the Minecraft server console:
+[RCON](http://wiki.vg/RCON) is **enabled by default** to allow for graceful shut down the server and coordination of save state during backups. RCON can be disabled by setting `ENABLE_RCON` to "false".
+
+The default password for RCON is randomly generated at the build time of the image. This default password changes with every build. The value of this password is not provided.
+
+In order to use RCON you will need to change the default password by setting `RCON_PASSWORD`.
+
+<!-- The default password is "minecraft" but **change the password before deploying into production** by setting `RCON_PASSWORD`. -->
+
+!!! danger
+    
+    **DO NOT MAP THE RCON PORT EXTERNALLY** unless you aware of all the consequences and have set a **secure password** with `RCON_PASSWORD`. 
+
+!!! info 
+
+    Mapping ports (`-p` command line or `ports` in compose) outside the container and docker networking needs to be a purposeful choice. Most production Docker deployments do not need any of the Minecraft ports mapped externally from the server itself.
+
+By default, the server listens for RCON on port `25575` within the container. It can be changed with `RCON_PORT` but only do this if you have a very good reason. 
+
+!!! warning
+    
+    **DO NOT** change `rcon.port` via `server.properties` or integrations will break.
+
+You can `exec` into the container to access the Minecraft server console:
 
 ```
 docker exec -i mc rcon-cli
 ```
 
-Note: The `-i` is required for interactive use of rcon-cli.
+!!! note 
+    
+    The `-i` is required for interactive use of rcon-cli.
 
 To run a simple, one-shot command, such as stopping a Minecraft server, pass the command as arguments to `rcon-cli`, such as:
 
@@ -13,11 +36,13 @@ To run a simple, one-shot command, such as stopping a Minecraft server, pass the
 docker exec mc rcon-cli stop
 ```
 
-_The `-i` is not needed in this case._
+!!! note 
+
+    The `-i` is not needed in this case.
 
 If rcon is disabled you can send commands by passing them as arguments to the packaged `mc-send-to-console` script. For example, a player can be op'ed in the container `mc` with: 
 
-```shell
+``` 
 docker exec mc mc-send-to-console op player
             |                     |
             +- container name     +- Minecraft commands start here
@@ -112,4 +137,3 @@ Uses team NEW and team OLD to track players on the server. So move player with n
         /kill @e[type=minecraft:boat]
         /pregen start 200
 ```
-
