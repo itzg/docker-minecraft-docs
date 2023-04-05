@@ -15,6 +15,7 @@ theme:
     - navigation.expand
     - navigation.top
     - navigation.indexes
+    - toc.integrate
   locale: en
 
   highlightjs: true
