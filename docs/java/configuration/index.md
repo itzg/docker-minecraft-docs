@@ -2,87 +2,10 @@ By default, the server configuration will be created and set based on the follow
 
 If you prefer to manually manage the `server.properties` file, set `OVERRIDE_SERVER_PROPERTIES` to "false". Similarly, you can entirely skip the startup script's creation of `server.properties` by setting `SKIP_SERVER_PROPERTIES` to "true".
 
-> NOTE: to clear a server property, set the variable to an empty string, such as `-e RESOURCE_PACK=""`. A variables that maps to a server property that is unset, is ignored and the existing `server.property` is left unchanged. 
-
-### Message of the Day
-
-The message of the day, shown below each server entry in the client UI, can be changed with the `MOTD` environment variable, such as
-
-    -e MOTD="My Server"
-
-If you leave it off, a default is computed from the server type and version, such as
-
-    A Paper Minecraft Server powered by Docker
-
-That way you can easily differentiate between several servers you may have started.
-
-The section symbol (§) and other unicode characters are automatically converted to allow [formatting codes](https://minecraft.fandom.com/wiki/Formatting_codes) to be used consistently with all server versions. For example,
-
-     -e MOTD="A §l§cMinecraft§r §nserver"
-
-renders
-
-![](../../assets/images/java/motd-example.png)
-
-To produce a multi-line MOTD, you will need to double escape the newline such as
-
-    -e MOTD="Line one\\nLine two"
-
-### Difficulty
-
-The difficulty level (default: `easy`) can be set like:
-
-```
-docker run -d -e DIFFICULTY=hard ...
-```
-
-Valid values are: `peaceful`, `easy`, `normal`, and `hard`, and an
-error message will be output in the logs if it's not one of these
-values.
-
-### Whitelist Players
-
-!!! note 
-    
-    It is very important to set this with servers exposed to the internet where you want only limited players to join.
-
-To whitelist players for your Minecraft server, you can:  
-
-- Provide a list of usernames and/or UUIDs separated by commas via the `WHITELIST` environment variable  
-  `docker run -d -e WHITELIST=user1,uuid2 ...`
-- Provide the url or path to a whitelist file via `WHITELIST_FILE` environment variable  
-  `docker run -d -e WHITELIST_FILE=/extra/whitelist.json ...`
-
-When either is set, [whitelisting of connecting users](https://minecraft.fandom.com/wiki/Server.properties#white-list) is enabled . If managing the list manually, `ENABLE_WHITELIST` can be set to "true" to set the `white-list` property.
-
-If whitelist configuration already exists, `WHITELIST_FILE` will not be retrieved and any usernames in `WHITELIST` are **added** to the whitelist configuration. You can enforce regeneration of the whitelist on each server startup by setting `OVERRIDE_WHITELIST` to "true". This will delete the whitelist file before processing whitelist configuration.
-
 !!! note
 
-    You can provide both `WHITELIST_FILE` and `WHITELIST`, which are processed in that order.
+    To clear a server property, set the variable to an empty string, such as `-e RESOURCE_PACK=""`. A variables that maps to a server property that is unset, is ignored and the existing `server.property` is left unchanged. 
 
-!!! note 
-    
-    UUIDs passed via `WHITELIST` need to be the dashed variant, otherwise it not be recognised and instead added as a username.
-    
-    If running Minecraft 1.7.5 or earlier, these variables will apply to `white-list.txt`, with 1.7.6 implementing support for `whitelist.json`. Make sure your `WHITELIST_FILE` is in the appropriate format.
-
-To [enforce the whitelist changes immediately](https://minecraft.fandom.com/wiki/Server.properties#enforce-whitelist) when whitelist commands are used , set `ENFORCE_WHITELIST` to "true".
-
-### Op/Administrator Players
-
-Similar to the whitelist, to add users as operators (aka adminstrators) to your Minecraft server, you can:  
-
-- Provide te url or path to an ops file via `OPS_FILE` environment variable  
-    `docker run -d -e OPS_FILE=https://config.example.com/extra/ops.json ...`
-- Provide a list of usernames and/or UUIDs separated by commas via the `OPS` environment variable  
-    `docker run -d -e OPS=user1,uuid2 ...`
-
-If ops configuration already exists, `OPS_FILE` will not be retrieved and any usernames in `OPS` are **added** to the ops configuration. You can enforce regeneration of the ops configuration on each server startup by setting `OVERRIDE_OPS` to "true". This will delete the ops file before processing ops configuration.
-
-!!! note 
-
-    Similar to whitelists, you can provide both `OPS_FILE` and `OPS`, and Minecraft 1.7.5 or earlier will use `ops.txt` rather than `ops.json`.
 
 ### Enable/disable initial selection of datapacks
 
@@ -121,7 +44,7 @@ By default, the server listens for RCON on port 25575 within the container. It c
 
 !!! warning
     
-    **DO NOT** change `rcon.port` via `server.properties`** or integrations will break.
+    **DO NOT** change `rcon.port` via `server.properties` or integrations will break.
 
 ### Query
 

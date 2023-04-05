@@ -645,14 +645,14 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
         </tr>
         <tr>
             <td><code>RCON_PASSWORD</code></td>
-            <td>You <strong>MUST</strong> change this value</td>
-            <td><code>minecraft</code></td>
+            <td>You <strong>MUST</strong> change this value. This has a random password by default. To be able to use RCON, you will need to specify your own password. The default, random, password changes from every build of the image.</td>
+            <td><code>{RANDOM PASSWORD}</code></td>
             <td>✅</td>
         </tr>
         <tr>
             <td><code>RCON_PASSWORD_FILE</code></td>
             <td>A file that contains the RCON Password.</td>
-            <td><code>minecraft</code></td>
+            <td><code></code></td>
             <td>✅</td>
         </tr>
         <tr>

@@ -46,7 +46,13 @@ nav:
       - "Fabric": "java/server-types/fabric.md"
       - "Packwiz": "java/server-types/packwiz.md"
     - "Working with mods and plugins": "java/mods-plugins/index.md"
-    - "Server Configuration": "java/configuration/index.md"
+    - "Server Configuration":
+       - "java/configuration/index.md"
+       - "Difficulty": "java/configuration/difficulty.md"
+       - "MOTD": "java/configuration/motd.md"
+       - "WhiteList":
+         - "java/configuration/whitelist.md"
+         - "Op/Administrator": "java/configuration/ops.md"
     - "Miscellaneous Options": "java/configuration/misc-options.md"
     - "AutoPause / AutoStop":
       - "AutoPause": "java/autopause/autopause.md"
