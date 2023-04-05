@@ -140,14 +140,6 @@ The following example shows a patch-set file were various fields in the `paper.y
 
     Only JSON and Yaml files can be patched at this time. TOML support is planned to be added next. Removal of comments and other cosmetic changes will occur when patched files are processed.
 
-### Running with a custom server JAR
-
-If you would like to run a custom server JAR, set `-e TYPE=CUSTOM` and pass the custom server
-JAR via `CUSTOM_SERVER`. It can either be a URL or a container path to an existing JAR file.
-
-If it is a URL, it will only be downloaded into the `/data` directory if it wasn't already. As
-such, if you need to upgrade or re-download the JAR, then you will need to stop the container,
-remove the file from the container's `/data` directory, and start again.
 
 ### Force re-download of the server file
 
@@ -201,7 +193,9 @@ environment variable. The JVM requires `-XX` options to precede `-X` options, so
 docker run ... -e JVM_OPTS="-someJVMOption someJVMOptionValue" ...
 ```
 
-**NOTE** When declaring `JVM_OPTS` in a compose file's `environment` section with list syntax, **do not** include the quotes:
+!!! note
+
+    When declaring `JVM_OPTS` in a compose file's `environment` section with list syntax, **do not** include the quotes:
 
 ``` yaml
     environment:
