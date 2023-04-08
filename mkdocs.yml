@@ -28,7 +28,7 @@ theme:
     - json
     - powershell
 nav:
-  - "Java Edition":
+  - "Java Edition": # TAB
     - "Intro":
       - "index.md"
       - "Interacting With The Server": "java/rcon.md"
@@ -104,7 +104,7 @@ nav:
       - "Running on RaspberryPi": "java/raspberrypi/index.md"
       - "Mitigated Log4jShell Vulnerability": "java/log4j/index.md"
       - "Environment Variables CheatSheet": "java/environment/index.md"
-  - "Bedrock":
+  - "Bedrock":  # TAB
     - "bedrock/index.md"
     - "Environment Variables": "bedrock/environment/index.md"
     - "Deployment":
@@ -112,8 +112,8 @@ nav:
       - "Kubernetes": "bedrock/deployment/k8s.md"
     - "Examples": "bedrock/examples/index.md"
     - "Mods Addons": "bedrock/mods/index.md"
-  - "Related Projects": "related-projects.md"
-  - "Contributing":
+  - "Related Projects": "related-projects.md"  # TAB
+  - "Contributing":  # TAB
     - "Development": "contributing/development.md"
     - "Building": "contributing/building.md"
 

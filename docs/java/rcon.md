@@ -1,15 +1,14 @@
 [RCON](http://wiki.vg/RCON) is **enabled by default** to allow for graceful shut down the server and coordination of save state during backups. RCON can be disabled by setting `ENABLE_RCON` to "false".
 
-The default password for RCON is randomly generated at the build time of the image. This default password changes with every build. The value of this password is not provided.
-
-In order to use RCON you will need to change the default password by setting `RCON_PASSWORD`.
+The RCON password can be set via `RCON_PASSWORD` or the name of a file that contains the password can be referenced by setting `RCON_PASSWORD_FILE`. If not set, a random password will be generated at each startup.
 
 <!-- The default password is "minecraft" but **change the password before deploying into production** by setting `RCON_PASSWORD`. -->
 
 !!! danger
     
-    **DO NOT MAP THE RCON PORT EXTERNALLY** unless you aware of all the consequences and have set a **secure password** with `RCON_PASSWORD`. 
+    Regardless of the password set or defaulted, **DO NOT MAP THE RCON PORT EXTERNALLY** unless you sure that is what you intended.
 
+    
 !!! info 
 
     Mapping ports (`-p` command line or `ports` in compose) outside the container and docker networking needs to be a purposeful choice. Most production Docker deployments do not need any of the Minecraft ports mapped externally from the server itself.
