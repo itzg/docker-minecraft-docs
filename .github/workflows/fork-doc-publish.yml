@@ -1,18 +1,20 @@
-name: Documentation Build and Publish
+name: '[FORK] Documentation Build and Publish'
 on:
   push:
     branches:
-      - main
+      - '*'
+      - '!main'
+      - '!gh-pages'
 jobs:
   docs:
     env:
-      IS_ORIGINAL_REPO: ${{ github.repository_owner }} == "itzg"
+      IS_FORK_REPO: ${{ github.repository_owner }} != "itzg"
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-      if: env.IS_ORIGINAL_REPO
+      if: env.IS_FORK_REPO
     - name: Deploy docs
-      if: env.IS_ORIGINAL_REPO
+      if: env.IS_FORK_REPO
       uses: mhausenblas/mkdocs-deploy-gh-pages@master
       env:
         GITHUB_TOKEN: ${{ github.token }}

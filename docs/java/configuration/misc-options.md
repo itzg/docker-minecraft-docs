@@ -25,14 +25,15 @@ password = ${CFG_DB_PASSWORD}
 ```
 
 ...a secret declared in the compose file with:
-```yaml
+
+``` yaml
 secrets:
   db_password:
     external: true
 ```
 
 ...and finally the environment variable would be named with a `_FILE` suffix and point to the mounted secret:
-```yaml
+``` yaml
     environment:
       CFG_DB_PASSWORD_FILE: /run/secrets/db_password
 ```
@@ -50,7 +51,7 @@ REPLACE_ENV_VARIABLES_EXCLUDE_PATHS="/data/plugins/Essentials/userdata /data/plu
 
 Here is a full example where we want to replace values inside a `database.yml`.
 
-```yml
+``` yaml
 
 ---
 database:
@@ -61,7 +62,7 @@ database:
 
 This is how your `docker-compose.yml` file could look like:
 
-```yml
+``` yaml
 version: "3.8"
 # Other docker-compose examples in /examples
 
@@ -103,7 +104,7 @@ Variable placeholders in the patch values can be restricted by setting `REPLACE_
 
 The following example shows a patch-set file were various fields in the `paper.yaml` configuration file can be modified and added:
 
-```json
+``` json
 {
   "patches": [
     {
@@ -135,16 +136,10 @@ The following example shows a patch-set file were various fields in the `paper.y
 }
 ```
 
-> **NOTES:** Only JSON and Yaml files can be patched at this time. TOML support is planned to be added next. Removal of comments and other cosmetic changes will occur when patched files are processed.
+!!! note
 
-### Running with a custom server JAR
+    Only JSON and Yaml files can be patched at this time. TOML support is planned to be added next. Removal of comments and other cosmetic changes will occur when patched files are processed.
 
-If you would like to run a custom server JAR, set `-e TYPE=CUSTOM` and pass the custom server
-JAR via `CUSTOM_SERVER`. It can either be a URL or a container path to an existing JAR file.
-
-If it is a URL, it will only be downloaded into the `/data` directory if it wasn't already. As
-such, if you need to upgrade or re-download the JAR, then you will need to stop the container,
-remove the file from the container's `/data` directory, and start again.
 
 ### Force re-download of the server file
 
@@ -198,9 +193,11 @@ environment variable. The JVM requires `-XX` options to precede `-X` options, so
 docker run ... -e JVM_OPTS="-someJVMOption someJVMOptionValue" ...
 ```
 
-**NOTE** When declaring `JVM_OPTS` in a compose file's `environment` section with list syntax, **do not** include the quotes:
+!!! note
 
-```yaml
+    When declaring `JVM_OPTS` in a compose file's `environment` section with list syntax, **do not** include the quotes:
+
+``` yaml
     environment:
       - EULA=true
       - JVM_OPTS=-someJVMOption someJVMOptionValue 
@@ -208,7 +205,7 @@ docker run ... -e JVM_OPTS="-someJVMOption someJVMOptionValue" ...
 
 Using object syntax is recommended and more intuitive:
 
-```yaml
+``` yaml
     environment:
       EULA: "true"
       JVM_OPTS: "-someJVMOption someJVMOptionValue"
@@ -220,13 +217,13 @@ As a shorthand for passing several system properties as `-D` arguments, you can 
 
 For example, instead of passing
 
-```yaml
+``` yaml
   JVM_OPTS: -Dfml.queryResult=confirm -Dname=value
 ```
 
 you can use
 
-```yaml
+``` yaml
   JVM_DD_OPTS: fml.queryResult=confirm,name=value
 ```
 
@@ -244,21 +241,23 @@ If you would like to `docker attach` to the Minecraft server console with color 
   -e EXEC_DIRECTLY=true
 ```
 
-> **NOTES**
->
-> This feature doesn't work via rcon, so you will need to `docker attach` to the container. Use the sequence Ctrl-P, Ctrl-Q to detach. 
-> 
-> This will bypass graceful server shutdown handling when using `docker stop`, so be sure the server console's `stop` command.
-> 
-> Make to enable stdin and tty with `-it` when using `docker run` or `stdin_open: true` and `tty: true` when using docker compose.
->
-> This feature is incompatible with Autopause and cannot be set when `ENABLE_AUTOPAUSE=true`.
+!!! note
+
+    This feature doesn't work via rcon, so you will need to `docker attach` to the container. Use the sequence Ctrl-P, Ctrl-Q to detach. 
+
+    This will bypass graceful server shutdown handling when using `docker stop`, so be sure the server console's `stop` command.
+
+    Make to enable stdin and tty with `-it` when using `docker run` or `stdin_open: true` and `tty: true` when using docker compose.
+
+    This feature is incompatible with Autopause and cannot be set when `ENABLE_AUTOPAUSE=true`.
 
 ### Server Shutdown Options
 
 To allow time for players to finish what they're doing during a graceful server shutdown, set `STOP_SERVER_ANNOUNCE_DELAY` to a number of seconds to delay after an announcement is posted by the server.
 
-> **NOTE** be sure to adjust Docker's shutdown timeout accordingly, such as using [the -t option on docker-compose down](https://docs.docker.com/compose/reference/down/).
+!!! note
+
+    Be sure to adjust Docker's shutdown timeout accordingly, such as using [the -t option on docker-compose down](https://docs.docker.com/compose/reference/down/).
 
 ### OpenJ9 Specific Options
 
@@ -277,7 +276,9 @@ By default the vanilla log file will grow without limit. The logger can be recon
   -e ENABLE_ROLLING_LOGS=true
 ```
 
-> **NOTE** this will interfere with interactive/color consoles [as described in the section above](#interactive-and-color-console)
+!!! note 
+
+    This will interfere with interactive/color consoles [as described in the section above](#interactive-and-color-console)
 
 ### Timezone Configuration
 
@@ -366,75 +367,4 @@ To also include the timestamp with each log, set `LOG_TIMESTAMP` to "true". The 
 
 ```
 [init] 2022-02-05 16:58:33+00:00 Starting the Minecraft server...
-```
-
-### Auto-execute RCON commands
-
-RCON commands can be configured to execute when the server starts, a client connects, or a client disconnects.
-
-!!! note
-
-    When declaring several commands within a compose file environment variable, it's easiest to use YAML's `|-` [block style indicator](https://yaml-multiline.info/).
-
-**On Server Start:**
-
-``` yaml
-      RCON_CMDS_STARTUP:  |-
-        gamerule doFireTick false
-        pregen start 200
-```
-
-**On Client Connection:**
-
-``` yaml
-      RCON_CMDS_ON_CONNECT:  |-
-        team join New @a[team=]
-```
-
-**Note:**
-* On client connect we only know there was a connection, and not who connected. RCON commands will need to be used for that.
-
-**On Client Disconnect:**
-
-``` yaml
-      RCON_CMDS_ON_DISCONNECT:  |-
-        gamerule doFireTick true
-```
-
-**On First Client Connect**
-
-``` yaml
-      RCON_CMDS_FIRST_CONNECT: |-
-        pregen stop
-```
-
-**On Last Client Disconnect**
-
-``` yaml
-      RCON_CMDS_LAST_DISCONNECT: |-
-        kill @e[type=minecraft:boat]
-        pregen start 200
-
-```
-
-**Example of rules for new players**
-
-Uses team NEW and team OLD to track players on the server. So move player with no team to NEW, run a command, move them to team OLD.
-[Reference Article](https://www.minecraftforum.net/forums/minecraft-java-edition/redstone-discussion-and/2213523-detect-players-first-join)
-
-``` yaml
-      RCON_CMDS_STARTUP:  |-
-        /pregen start 200
-        /gamerule doFireTick false
-        /team add New
-        /team add Old
-      RCON_CMDS_ON_CONNECT: |-
-        /team join New @a[team=]
-        /give @a[team=New] birch_boat
-        /team join Old @a[team=New]
-      RCON_CMDS_FIRST_CONNECT: |-
-        /pregen stop
-      RCON_CMDS_LAST_DISCONNECT: |-
-        /kill @e[type=minecraft:boat]
-        /pregen start 200
 ```

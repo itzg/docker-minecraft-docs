@@ -1,6 +1,6 @@
-
 ### **OS OPTIONS**
-<table>
+
+<table style="width:100%">
     <thead>
         <tr>
             <th>NAME</th>
@@ -42,7 +42,7 @@
         </tr>
         <tr>
             <td><code>TZ</code></td>
-            <td>You can configure the timezone to match yours by setting the TZ environment variable.  
+            <td>You can configure the timezone to match yours by setting the TZ environment variable.
 
 alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 
@@ -110,7 +110,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
 
 ### **SERVER**
 
-<table>
+<table style="width:100%">
     <thead>
         <tr>
             <th>NAME</th>
@@ -122,7 +122,7 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     <tbody>
         <tr>
             <td><code>TYPE</code></td>
-            <td>The server <a href="java/server-types/">type</a></td>
+            <td>The server <a href="../server-types/">type</a></td>
             <td><code>VANILLA</code></td>
             <td>⬜️</td>
         </tr>
@@ -428,14 +428,14 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
             <td>⬜️</td>
         </tr>
         <tr>
-            <td><code>USE_FLARE_FLAGS</code></td>
-            <td>To enable the JVM flags required to fully support the <a href="https://blog.airplane.gg/flare">Flare profiling suite</a>.</td>
-            <td><code></code></td>
+            <td><code>USE_SIMD_FLAGS</code></td>
+            <td>Support for optimized SIMD operation</td>
+            <td><code>false</code></td>
             <td>⬜️</td>
         </tr>
         <tr>
-            <td><code>USE_SIMD_FLAGS</code></td>
-            <td>Support for optimized SIMD operation</td>
+            <td><code>DISABLE_HEALTHCHECK</code></td>
+            <td>This will disable the HealthCheck.</td>
             <td><code>false</code></td>
             <td>⬜️</td>
         </tr>
@@ -448,9 +448,114 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     </tbody>
 </table>
 
+### PLUGINS / MODS / CONFIGS
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>COPY_PLUGINS_SRC</code></td>
+      <td>Copy the contents of <code>/data/plugins</code> from the defined source.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>COPY_PLUGINS_DEST</code></td>
+      <td>Copy the contents of <code>/data/plugins</code> from the defined source to this destination.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>COPY_MODS_SRC</code></td>
+      <td>Copy the contents of <code>/data/mods</code> from the defined source.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>COPY_MODS_DEST</code></td>
+      <td>Copy the contents of <code>/data/mods</code> from the defined source to this destination.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>COPY_CONFIG_SRC</code></td>
+      <td>Copy the contents of <code>/data/config</code> from the defined source.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>COPY_CONFIG_DEST</code></td>
+      <td>Copy the contents of <code>/data/config</code> from the defined source to this destination.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>SYNC_SKIP_NEWER_IN_DESTINATION</code></td>
+      <td>if you want files from <code>/plugins</code> to take precedence over newer files in <code>/data/plugins</code></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REPLACE_ENV_SUFFIXES</code></td>
+      <td>By default, the environment variable processing is performed on synchronized files that match the expected suffixes</td>
+      <td><code>yml,yaml,txt,cfg,conf,properties,hjson,json,tml,toml</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REPLACE_ENV_VARIABLES_EXCLUDES</code></td>
+      <td></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REPLACE_ENV_VARIABLES_EXCLUDE_PATHS</code></td>
+      <td></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REPLACE_ENV_DURING_SYNC </code></td>
+      <td>Disable the environment replacement during sync.</td>
+      <td><code>true</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_MODS</code></td>
+      <td></td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_MODS_INCLUDE</code></td>
+      <td>You can fine tune the removal process by specifying mods to include</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_MODS_EXCLUDE</code></td>
+      <td>You can fine tune the removal process by specifying mods to exclude</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_MODS_DEPTH</code></td>
+      <td>The depth of folders to delete for old mods.</td>
+      <td><code>16</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
 ### **CUSTOM RESOURCE PACK**
 
-<table>
+<table style="width:100%">
     <thead>
         <tr>
             <th>NAME</th>
@@ -481,9 +586,9 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     </tbody>
 </table>
 
-### **WHITELIST**
+### **[WHITELIST](../configuration/#whitelist-players)**
 
-<table>
+<table style="width:100%">
     <thead>
         <tr>
             <th>NAME</th>
@@ -520,9 +625,9 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     </tbody>
 </table>
 
-### **RCON**
+### **[RCON](../configuration/#rcon)**
 
-<table>
+<table style="width:100%">
     <thead>
         <tr>
             <th>NAME</th>
@@ -540,8 +645,14 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
         </tr>
         <tr>
             <td><code>RCON_PASSWORD</code></td>
-            <td>You <strong>MUST</strong> change this value</td>
-            <td><code>minecraft</code></td>
+            <td>You <strong>MUST</strong> change this value. This has a random password by default. To be able to use RCON, you will need to specify your own password. The default, random, password changes from every build of the image.</td>
+            <td><code>{RANDOM PASSWORD}</code></td>
+            <td>✅</td>
+        </tr>
+        <tr>
+            <td><code>RCON_PASSWORD_FILE</code></td>
+            <td>A file that contains the RCON Password.</td>
+            <td><code></code></td>
             <td>✅</td>
         </tr>
         <tr>
@@ -586,16 +697,22 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
             <td><code></code></td>
             <td>⬜️</td>
         </tr>
+        <tr>
+            <td><code>RCON_CMDS_PERIOD</code></td>
+            <td>The number of seconds between each RCON Startup commands</td>
+            <td><code>10</code></td>
+            <td>⬜️</td>
+        </tr>
     </tbody>
 </table>
 
-### **AUTOPAUSE**
+### **[AUTOPAUSE](../autopause/)**
 
 !!! note
 
     Autopause is not compatible with `EXEC_DIRECTLY=true` and the two cannot be set together.
 
-<table>
+<table style="width:100%">
     <thead>
         <tr>
             <th>NAME</th>
@@ -650,157 +767,867 @@ alternatively, you can mount: <code>/etc/localtime:/etc/localtime:ro
     </tbody>
 </table>
 
-
-
-### **AUTOSTOP**
+### **[AUTOSTOP](../autopause/autostop/)**
 
 !!! note
 
     AutoStop function is incompatible with the Autopause functionality, as they basically cancel out each other.
 
-<table>
-    <thead>
-        <tr>
-            <th>NAME</th>
-            <th>DESCRIPTION</th>
-            <th>DEFAULT</th>
-            <th>REQUIRED</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>ENABLE_AUTOSTOP</code></td>
-            <td>Enable the AutoStop functionality</td>
-            <td><code>FALSE</code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>AUTOSTOP_TIMEOUT_EST</code></td>
-            <td>describes the time between the last client disconnect and the stopping of the server</td>
-            <td><code>3600</code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>AUTOSTOP_TIMEOUT_INIT</code></td>
-            <td>describes the time between server start and the stopping of the server, when no client connects in-between</td>
-            <td><code>1800</code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>AUTOSTOP_PERIOD</code></td>
-            <td>describes period of the daemonized state machine, that handles the stopping of the serve</td>
-            <td><code>10</code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>DEBUG_AUTOSTOP</code></td>
-            <td>Adds additional logging for AutoStop</td>
-            <td><code>false</code></td>
-            <td>⬜️</td>
-        </tr>
-    </tbody>
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ENABLE_AUTOSTOP</code></td>
+      <td>Enable the AutoStop functionality</td>
+      <td><code>FALSE</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>AUTOSTOP_TIMEOUT_EST</code></td>
+      <td>describes the time between the last client disconnect and the stopping of the server</td>
+      <td><code>3600</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>AUTOSTOP_TIMEOUT_INIT</code></td>
+      <td>describes the time between server start and the stopping of the server, when no client connects in-between</td>
+      <td><code>1800</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>AUTOSTOP_PERIOD</code></td>
+      <td>describes period of the daemonized state machine, that handles the stopping of the serve</td>
+      <td><code>10</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>DEBUG_AUTOSTOP</code></td>
+      <td>Adds additional logging for AutoStop</td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
 </table>
 
 
-### **CURSEFORGE**
+### **[CURSEFORGE](../server-types/#auto-curseforge-management)**
 
 !!! note
 
      A CurseForge API key is required to use a CurseForge type server. Go to their [developer console](https://console.curseforge.com/), generate an API key, and set the environment variable CF_API_KEY
 
-<table>
-    <thead>
-        <tr>
-            <th>NAME</th>
-            <th>DESCRIPTION</th>
-            <th>DEFAULT</th>
-            <th>REQUIRED</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><code>CF_API_KEY</code></td>
-            <td><strong>YOUR</strong> CurseForge (Eternal) API Key.</td>
-            <td><code></code></td>
-            <td>✅</td>
-        </tr>
-        <tr>
-            <td><code>CF_PAGE_URL</code></td>
-            <td>Pass a page URL to the modpack or a specific file</td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_SLUG</code></td>
-            <td>Instead of a URL, the modpack slug can be provided.</td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_FILE_ID</code></td>
-            <td>The mod curseforge numerical ID.</td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_FILENAME_MATCHER</code></td>
-            <td>Specify a substring to match the desired filename</td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_EXCLUDE_INCLUDE_FILE</code></td>
-            <td>Global and per modpack exclusions can be declared in a JSON file and referenced with this variable. <br /><br />By default, the <a href="https://github.com/itzg/docker-minecraft-server/blob/master/files/cf-exclude-include.json">file bundled with the image</a> will be used, but can be disabled by setting this to an empty string. The schema of this file is <a href="https://github.com/itzg/mc-image-helper#excludeinclude-file-schema">documented here</a>.</td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_EXCLUDE_MODS</code></td>
-            <td>Mods can be excluded by passing a comma or space delimited list of project slugs or IDs</td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_FORCE_INCLUDE_MODS</code></td>
-            <td>Mods can be included by passing a comma or space delimited list of project slugs or IDs</td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_FORCE_SYNCHRONIZE</code></td>
-            <td>Forces the excludes/includes to be re-evaluated</td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_SET_LEVEL_FROM</code></td>
-            <td>Some modpacks come with world/save data via a worlds file and/or the overrides provided with the modpack. Either approach can be selected to set the LEVEL to the resulting saves directory by setting this to either:
-            <ul>
-                <li>WORLD_FILE</li>
-                <li>OVERRIDES</li>
-            </ul></td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_PARALLEL_DOWNLOADS</code></td>
-            <td>specify how many parallel mod downloads to perform</td>
-            <td><code>4</code></td>
-            <td>⬜️</td>
-        </tr>
-        <tr>
-            <td><code>CF_OVERRIDES_SKIP_EXISTING</code></td>
-            <td>if set, files in the overrides that already exist in the data directory are skipped. world data is always skipped, if present.</td>
-            <td><code>false</code></td>
-            <td>⬜️</td>
-        </tr>
-    </tbody>
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>CF_API_KEY</code></td>
+      <td><strong>YOUR</strong> CurseForge (Eternal) API Key.</td>
+      <td><code></code></td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><code>CF_PAGE_URL</code></td>
+      <td>Pass a page URL to the modpack or a specific file</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_MODPACK_ZIP</code></td>
+      <td>If the authors of the modpack have disallowed project distribution, then the desired <strong>client</strong> modpack zip will need to be manually downloaded and made available to the container. The path to that file must be passed to this environment variable.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_SLUG</code></td>
+      <td>Instead of a URL, the modpack slug can be provided.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_FILE_ID</code></td>
+      <td>The mod curseforge numerical ID.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_FILENAME_MATCHER</code></td>
+      <td>Specify a substring to match the desired filename</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_EXCLUDE_INCLUDE_FILE</code></td>
+      <td>Global and per modpack exclusions can be declared in a JSON file and referenced with this variable. <br /><br />By default, the <a href="https://github.com/itzg/docker-minecraft-server/blob/master/files/cf-exclude-include.json">file bundled with the image</a> will be used, but can be disabled by setting this to an empty string. The schema of this file is <a href="https://github.com/itzg/mc-image-helper#excludeinclude-file-schema">documented here</a>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_EXCLUDE_MODS</code></td>
+      <td>Mods can be excluded by passing a comma or space delimited list of project slugs or IDs</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_FORCE_INCLUDE_MODS</code></td>
+      <td>Mods can be included by passing a comma or space delimited list of project slugs or IDs</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_FORCE_SYNCHRONIZE</code></td>
+      <td>Forces the excludes/includes to be re-evaluated</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_SET_LEVEL_FROM</code></td>
+      <td>Some modpacks come with world/save data via a worlds file and/or the overrides provided with the modpack. Either approach can be selected to set the LEVEL to the resulting saves directory by setting this to either:
+      <ul>
+        <li>WORLD_FILE</li>
+        <li>OVERRIDES</li>
+      </ul></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_PARALLEL_DOWNLOADS</code></td>
+      <td>specify how many parallel mod downloads to perform</td>
+      <td><code>4</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>CF_OVERRIDES_SKIP_EXISTING</code></td>
+      <td>if set, files in the overrides that already exist in the data directory are skipped. world data is always skipped, if present.</td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
 </table>
+
+### **[FABRIC](../server-types/#running-a-fabric-server)**
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>FABRIC_LAUNCHER</code></td>
+      <td>Path to a custom launcher jar, relative to <code>/data</code></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FABRIC_LAUNCHER_URL</code></td>
+      <td>A URL to a custom launcher jar</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FABRIC_LAUNCHER_VERSION</code></td>
+      <td>A specific launcher version other than the latest</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FABRIC_LOADER_VERSION</code></td>
+      <td>A specific loader version other than the latest</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### **[FORGE](../mods-plugins/#forgeapi-usage-to-use-non-version-specific-projects)**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>FORGE_VERSION</code></td>
+      <td>The specific Forge Version</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FORGE_INSTALLER</code></td>
+      <td>Path to a pre-downloaded forge installer</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FORGE_INSTALLER_URL</code></td>
+      <td>A Forge installer from a custom location</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FORGE_FORCE_REINSTALL</code></td>
+      <td>If an error occurred while installing Forge, it might be possible to resolve by temporarily setting <code>FORGE_FORCE_REINSTALL</code> to <code>true</code>. Be sure to remove that variable after successfully starting the server.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### **[QUILT](../server-types/#running-a-quilt-server)**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>QUILT_LAUNCHER</code></td>
+      <td>Path to a custom launcher jar, relative to <code>/data</code></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>QUILT_LAUNCHER_URL</code></td>
+      <td>Url to a custom launcher jar.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>QUILT_LOADER_VERSION</code></td>
+      <td>The specific Quilt Loader Version</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>QUILT_INSTALLER_VERSION</code></td>
+      <td>The specific Quilt Launcher Version</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **[BUKKIT](../server-types/#running-a-bukkitspigot-server)**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>FORCE_REDOWNLOAD</code></td>
+      <td>If the downloaded server jar is corrupted, set this to <code>true</code> to force a re-download during the next container startup. After successfully re-downloading you should remove this, or set it to <code>false</code>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>BUKKIT_DOWNLOAD_URL</code></td>
+      <td>If you are hosting your own copy of Bukkit you can override the download URLs</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **[SPIGOT](../server-types/#running-a-bukkitspigot-server)**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>FORCE_REDOWNLOAD</code></td>
+      <td>If the downloaded server jar is corrupted, set this to <code>true</code> to force a re-download during the next container startup. After successfully re-downloading you should remove this, or set it to <code>false</code>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>SPIGOT_DOWNLOAD_URL</code></td>
+      <td>If you are hosting your own copy of Spigot you can override the download URLs</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>BUILD_FROM_SOURCE</code></td>
+      <td>You can build spigot from source by setting this to <code>true</code></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>SPIGET_RESOURCES</code></td>
+      <td>Set with a comma-separated list of SpigotMC resource IDs to automatically download <a href="https://www.spigotmc.org/resources/">SpigotMC resources/plugins</a> using <a href="https://spiget.org/">the spiget API</a>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **[PAPER](../server-types/#running-a-paper-server)**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>PAPERBUILD</code></td>
+      <td>By default, the container will run the latest build of <a href="https://papermc.io/downloads">Paper server</a> but you can also choose to run a specific build with</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>PAPER_DOWNLOAD_URL</code></td>
+      <td>If you are hosting your own copy of Paper you can override the download URLs</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>SPIGET_RESOURCES</code></td>
+      <td>Set with a comma-separated list of SpigotMC resource IDs to automatically download <a href="https://www.spigotmc.org/resources/">SpigotMC resources/plugins</a> using <a href="https://spiget.org/">the spiget API</a>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### **[PUFFERFISH](../server-types/#running-a-pufferfish-server)**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>PUFFERFISH_BUILD</code></td>
+      <td>Set a specific Pufferfish build to use.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FORCE_REDOWNLOAD</code></td>
+      <td>If the downloaded server jar is corrupted, set this to <code>true</code> to force a re-download during the next container startup. After successfully re-downloading you should remove this, or set it to <code>false</code>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>USE_FLARE_FLAGS</code></td>
+      <td>To enable the JVM flags required to fully support the <a href="https://blog.airplane.gg/flare">Flare profiling suite</a>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **[PURPUR](../server-types/#running-a-purpur-server)**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>PURPUR_BUILD</code></td>
+      <td>Set a specific PURPUR build to use.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FORCE_REDOWNLOAD</code></td>
+      <td>If the downloaded server jar is corrupted, set this to <code>true</code> to force a re-download during the next container startup. After successfully re-downloading you should remove this, or set it to <code>false</code>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>USE_FLARE_FLAGS</code></td>
+      <td>To enable the JVM flags required to fully support the <a href="https://blog.airplane.gg/flare">Flare profiling suite</a>.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>PURPUR_DOWNLOAD_URL</code></td>
+      <td>Set URL to download Purpur from custom URL.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **[MOHIST](../server-types/#running-a-mohist-server)**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>MOHIST_BUILD</code></td>
+      <td>Set a specific Mohist build to use.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+### **[CANYON](../server-types/#running-a-canyon-server)**
+
+!!! note
+
+    Only `VERSION=b1.7.3` is supported. Since that version pre-dates the health check mechanism used by this image, that will need to be disabled by setting `DISABLE_HEALTHCHECK=true`.
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>CANYON_BUILD</code></td>
+      <td>Set a specific CANYON build to use.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### **[SPONGEVANILLA](../server-types/#running-a-spongevanilla-server)**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>SPONGEVERSION</code></td>
+      <td>Set a specific version of Sponge to use.</td>
+      <td><code>STABLE</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **[LIMBO](../server-types/#running-a-limbo-server)**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>LIMBO_BUILD</code></td>
+      <td>Set a specific build to use.</td>
+      <td><code>LATEST</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>LIMBO_SCHEMA_FILENAME</code></td>
+      <td>The Limbo Schema Filename</td>
+      <td><code>default.schem</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### **[CRUCIBLE](../server-types/#running-a-crucible-server)**
+
+!!! note
+
+    Crucible is only available for 1.7.10, so be sure to set `VERSION=1.7.10`.
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>CRUCIBLE_RELEASE</code></td>
+      <td>Set a specific release to use.</td>
+      <td><code>latest</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>LIMBO_SCHEMA_FILENAME</code></td>
+      <td>The Limbo Schema Filename</td>
+      <td><code>default.schem</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+### **[FEED THE BEAST](../server-types/#running-a-server-with-a-feed-the-beast-modpack)**
+
+!!! note
+
+    Requires one of the Ubuntu with Hotspot images listed in the [Java versions section](../versions/java/).
+
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>FTB_MODPACK_ID</code></td>
+      <td>The numerical ID of the modpack to install</td>
+      <td><code></code></td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><code>FTB_MODPACK_VERSION_ID</code></td>
+      <td>The numerical ID of the version to install. If not specified, the latest version will be installed. </td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **MODRINTH**
+
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>MODRINTH_PROJECTS</code></td>
+      <td>A comma separated list of project slugs (short name) or IDs.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>MODRINTH_DOWNLOAD_OPTIONAL_DEPENDENCIES</code></td>
+      <td>required dependencies of the project will always be downloaded and optional dependencies can also be downloaded by setting this to <code>true</code></td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>MODRINTH_ALLOWED_VERSION_TYPE</code></td>
+      <td>the version type is used to determine the newest version to use from each project. The allowed values are <code>release</code>, <code>beta</code>, <code>alpha</code>.</td>
+      <td><code>release</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **MODPACK**
+
+Like the `WORLD` option above, you can specify the URL or path of a "mod pack" to download and install into mods for Forge/Fabric or plugins for Bukkit/Spigot. To use this option pass the environment variable `MODPACK`
+
+!!! note
+
+    The referenced URL must be a zip file with one or more jar files at the top level of the zip archive. Make sure the jars are compatible with the particular `TYPE` of server you are running.
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>MODPACK</code></td>
+      <td>A url to a zip file with one or more jar files at the top level of the zip archive.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **WORLD DATA**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>WORLD</code></td>
+      <td>A URL that is accessible from inside the container to a directory, zip, or tar file containing an archived world.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>WORLD_INDEX</code></td>
+      <td>If the archive contains more than one level.dat, then set this to the index, which defaults to 1</td>
+      <td><code>1</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>FORCE_WORLD_COPY</code></td>
+      <td>Will force a world file to be downloaded / copied, even if it already exists in the container.</td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **DATAPACKS**
+
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>DATAPACKS</code></td>
+      <td>A comma-separated list of zip file URL, zip file in container, or directory in container.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>DATAPACKS_FILE</code></td>
+      <td>a text file within the container where each line is a zip file URL, zip file in container, or directory in container.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_DATAPACKS</code></td>
+      <td>: if <code>true</code> the datapacks directory is removed of everything matching <code>REMOVE_OLD_DATAPACKS_INCLUDE</code>, but excluding <code>REMOVE_OLD_DATAPACKS_EXCLUDE</code> no deeper than <code>REMOVE_OLD_DATAPACKS_DEPTH</code></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_DATAPACKS_INCLUDE</code></td>
+      <td>A blob to match datapacks to remove.</td>
+      <td><code>*.zip</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_DATAPACKS_INCLUDE</code></td>
+      <td>A blob to exclude datapacks to remove.</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_DATAPACKS_INCLUDE</code></td>
+      <td>The directory depth to search while matching.</td>
+      <td><code>16</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+### **VANILLATWEAKS**
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>VANILLATWEAKS_FILE</code></td>
+      <td>comma separated list of JSON VanillaTweak pack files accessible within the container</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>VANILLATWEAKS_SHARECODE</code></td>
+      <td>A comma separated list of share codes</td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
+### **FORGEAPI**
+
+!!! note
+
+This potentially could lead to unexpected behavior if the Mod receives an update with unexpected behavior.
+
+<table style="width:100%">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>DESCRIPTION</th>
+      <th>DEFAULT</th>
+      <th>REQUIRED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>MODS_FORGEAPI_KEY</code></td>
+      <td><strong>YOUR</strong> <a href="https://docs.curseforge.com/#getting-started">CurseForge API Key</a>.</td>
+      <td><code></code></td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><code>MODS_FORGEAPI_FILE</code></td>
+      <td>Required or use <code>MODS_FORGEAPI_PROJECTIDS</code>. Overrides <code>MODS_FORGEAPI_PROJECTIDS</code>.</td>
+      <td><code></code></td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><code>MODS_FORGEAPI_PROJECTIDS</code></td>
+      <td>Required if <code>MODS_FORGEAPI_FILE</code> is not defined.</td>
+      <td><code></code></td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><code>MODS_FORGEAPI_RELEASES</code></td>
+      <td><ul>
+        <li>release</li>
+        <li>beta</li>
+        <li>alpha</li>
+      </ul></td>
+      <td><code>release</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>MODS_FORGEAPI_DOWNLOAD_DEPENDENCIES</code></td>
+      <td>Attempts to download required mods</td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>MODS_FORGEAPI_IGNORE_GAMETYPE</code></td>
+      <td>Allows for filtering mods on family type: FORGE, FABRIC, and BUKKIT. (Does not filter for Vanilla or custom)</td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_FORGEAPI_MODS</code></td>
+      <td></td>
+      <td><code>false</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_MODS_DEPTH</code></td>
+      <td>The depth in which to search for the files to remove.</td>
+      <td><code>1</code></td>
+      <td>⬜️</td>
+    </tr>
+    <tr>
+      <td><code>REMOVE_OLD_MODS_INCLUDE</code></td>
+      <td>A blob to find datapacks to remove</td>
+      <td><code>*.jar</code></td>
+      <td>⬜️</td>
+    </tr>
+  </tbody>
+</table>
+
+
 
 <!-- ✅ ⬜️ -->
 <!-- <tr>
-            <td><code></code></td>
-            <td></td>
-            <td><code></code></td>
-            <td>⬜️</td>
-        </tr> -->
+      <td><code></code></td>
+      <td></td>
+      <td><code></code></td>
+      <td>⬜️</td>
+    </tr> -->

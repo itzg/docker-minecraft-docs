@@ -1,11 +1,33 @@
-[RCON](http://wiki.vg/RCON) is enabled by default, so you can `exec` into the container to
-access the Minecraft server console:
+[RCON](http://wiki.vg/RCON) is **enabled by default** to allow for graceful shut down the server and coordination of save state during backups. RCON can be disabled by setting `ENABLE_RCON` to "false".
+
+The RCON password can be set via `RCON_PASSWORD` or the name of a file that contains the password can be referenced by setting `RCON_PASSWORD_FILE`. If not set, a random password will be generated at each startup.
+
+<!-- The default password is "minecraft" but **change the password before deploying into production** by setting `RCON_PASSWORD`. -->
+
+!!! danger
+    
+    Regardless of the password set or defaulted, **DO NOT MAP THE RCON PORT EXTERNALLY** unless you sure that is what you intended.
+
+    
+!!! info 
+
+    Mapping ports (`-p` command line or `ports` in compose) outside the container and docker networking needs to be a purposeful choice. Most production Docker deployments do not need any of the Minecraft ports mapped externally from the server itself.
+
+By default, the server listens for RCON on port `25575` within the container. It can be changed with `RCON_PORT` but only do this if you have a very good reason. 
+
+!!! warning
+    
+    **DO NOT** change `rcon.port` via `server.properties` or integrations will break.
+
+You can `exec` into the container to access the Minecraft server console:
 
 ```
 docker exec -i mc rcon-cli
 ```
 
-Note: The `-i` is required for interactive use of rcon-cli.
+!!! note 
+    
+    The `-i` is required for interactive use of rcon-cli.
 
 To run a simple, one-shot command, such as stopping a Minecraft server, pass the command as arguments to `rcon-cli`, such as:
 
@@ -13,11 +35,13 @@ To run a simple, one-shot command, such as stopping a Minecraft server, pass the
 docker exec mc rcon-cli stop
 ```
 
-_The `-i` is not needed in this case._
+!!! note 
+
+    The `-i` is not needed in this case.
 
 If rcon is disabled you can send commands by passing them as arguments to the packaged `mc-send-to-console` script. For example, a player can be op'ed in the container `mc` with: 
 
-```shell
+``` 
 docker exec mc mc-send-to-console op player
             |                     |
             +- container name     +- Minecraft commands start here
@@ -39,3 +63,76 @@ and attach from another machine:
     docker -H $HOST:2375 attach mc
 
 Unless you're on a home/private LAN, you should [enable TLS access](https://docs.docker.com/articles/https/).
+
+
+
+### Auto-execute RCON commands
+
+RCON commands can be configured to execute when the server starts, a client connects, or a client disconnects.
+
+!!! note
+
+    When declaring several commands within a compose file environment variable, it's easiest to use YAML's `|-` [block style indicator](https://yaml-multiline.info/).
+
+**On Server Start:**
+
+``` yaml
+      RCON_CMDS_STARTUP:  |-
+        gamerule doFireTick false
+        pregen start 200
+```
+
+**On Client Connection:**
+
+``` yaml
+      RCON_CMDS_ON_CONNECT:  |-
+        team join New @a[team=]
+```
+
+**Note:**
+* On client connect we only know there was a connection, and not who connected. RCON commands will need to be used for that.
+
+**On Client Disconnect:**
+
+``` yaml
+      RCON_CMDS_ON_DISCONNECT:  |-
+        gamerule doFireTick true
+```
+
+**On First Client Connect**
+
+``` yaml
+      RCON_CMDS_FIRST_CONNECT: |-
+        pregen stop
+```
+
+**On Last Client Disconnect**
+
+``` yaml
+      RCON_CMDS_LAST_DISCONNECT: |-
+        kill @e[type=minecraft:boat]
+        pregen start 200
+
+```
+
+**Example of rules for new players**
+
+Uses team NEW and team OLD to track players on the server. So move player with no team to NEW, run a command, move them to team OLD.
+[Reference Article](https://www.minecraftforum.net/forums/minecraft-java-edition/redstone-discussion-and/2213523-detect-players-first-join)
+
+``` yaml
+      RCON_CMDS_STARTUP:  |-
+        /pregen start 200
+        /gamerule doFireTick false
+        /team add New
+        /team add Old
+      RCON_CMDS_ON_CONNECT: |-
+        /team join New @a[team=]
+        /give @a[team=New] birch_boat
+        /team join Old @a[team=New]
+      RCON_CMDS_FIRST_CONNECT: |-
+        /pregen stop
+      RCON_CMDS_LAST_DISCONNECT: |-
+        /kill @e[type=minecraft:boat]
+        /pregen start 200
+```

@@ -222,7 +222,7 @@ docker run ... -v $HOME/worlds:/worlds:ro -e WORLD=/worlds/basic
 
 The following diagram shows how this option can be used in a compose deployment with a relative directory:
 
-![](../../images/world-copy-compose-project.drawio.png)
+![](../../assets/images/java/world-copy-compose-project.drawio.png)
 
 ### Overwrite world on start
 The world will only be downloaded or copied if it doesn't exist already. Set `FORCE_WORLD_COPY=TRUE` to force overwrite the world on every server start.
