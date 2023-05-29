@@ -28,6 +28,8 @@ theme:
     - json
     - powershell
 nav:
+  - "Java Edition":
+    - "java.md"
   - "Bedrock":  # TAB
     - "bedrock/index.md"
     - "Environment Variables": "bedrock/environment/index.md"
